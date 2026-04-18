@@ -50,7 +50,7 @@ Execute múltiplos subscribers e depois o publisher. Todos os subscribers recebe
 
 ## TODO
 
-- [ ] Implementar Broker (src/broker/server.py)
+- [X] Implementar Broker (src/broker/server.py)
 - [ ] Implementar Publisher (src/publisher/client.py)
 - [ ] Implementar Subscriber (src/subscriber/client.py)
 - [ ] Testar integração
