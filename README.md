@@ -1,6 +1,6 @@
 # Pub/Sub Placar de Futebol em Tempo Real
 
-Sistema demonstrando o paradigma Publisher/Subscriber com Broker gRPC customizado.
+Sistema demonstrando o paradigma Publisher/Subscriber com Broker gRPC customizado para a disciplina de Sistemas Distribuídos do curso de Ciência da Computação da UFF.
 
 ## Arquitetura
 
