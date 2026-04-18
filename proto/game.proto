@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package futebol;
+
+service GameService {
+    rpc PublishUpdate(UpdateRequest) returns (UpdateResponse);
+    rpc Subscribe(SubscribeRequest) returns (stream GameUpdate);
+}
+
+message UpdateRequest {
+    string home_team = 1;
+    string away_team = 2;
+    int32 home_score = 3;
+    int32 away_score = 4;
+    string match_time = 5;
+    int32 yellow_cards = 6;
+    int32 red_cards = 7;
+    int32 corners = 8;
+    int32 shots_on_goal = 9;
+}
+
+message UpdateResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message SubscribeRequest {
+    string subscriber_id = 1;
+}
+
+message GameUpdate {
+    string timestamp = 1;
+    string home_team = 2;
+    string away_team = 3;
+    int32 home_score = 4;
+    int32 away_score = 5;
+    string match_time = 6;
+    int32 yellow_cards = 7;
+    int32 red_cards = 8;
+    int32 corners = 9;
+    int32 shots_on_goal = 10;
+}
