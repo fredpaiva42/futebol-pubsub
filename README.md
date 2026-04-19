@@ -39,7 +39,7 @@ python -m src.broker.server
 ```bash
 source .venv/bin/activate
 
-python -m src.subscriber.client
+python -m src.subscriber.subscriber
 ```
 
 ### 3. Publicar Atualização
@@ -47,17 +47,21 @@ python -m src.subscriber.client
 ```bash
 source .venv/bin/activate
 
-python -m src.publisher.client
+python -m src.publisher.publisher
 ```
 
 ## Demonstração
 
 Execute múltiplos subscribers e depois o publisher. Todos os subscribers receberão as atualizações simultaneamente, demonstrando o paradigma Pub/Sub sem polling.
 
+## Filtro por Time
+
+O subscriber pode escolher receber atualizações de todos os jogos ou apenas de um time específico. Ao iniciar, digite o nome do time para filtrar ou deixe vazio para receber todas as atualizações.
+
 ## TODO
 
 - [X] Implementar Broker (src/broker/server.py)
 - [X] Implementar Publisher (src/publisher/publisher.py)
-- [X] Implementar Subscriber (src/subscriber/client.py)
+- [X] Implementar Subscriber (src/subscriber/subscriber.py)
 - [X] Testar integração
-- [ ] Adicionar filtros por time
+- [X] Adicionar filtros por time
