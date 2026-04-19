@@ -37,7 +37,9 @@ class GameServiceImpl(game_pb2_grpc.GameServiceServicer):
         )
 
         with self.lock:
-            for subscriber_id, q in self.subscribers.items():
+            for subscriber_id, (q, filter_team) in self.subscribers.items():
+                if filter_team and filter_team.lower() not in (request.home_team.lower(), request.away_team.lower()):
+                    continue
                 try:
                     q.put(game_update)
                 except Exception as e:
@@ -47,12 +49,13 @@ class GameServiceImpl(game_pb2_grpc.GameServiceServicer):
 
     def Subscribe(self, request, context):
         subscriber_id = request.subscriber_id
+        filter_team = getattr(request, 'filter_team', None)
         q = queue.Queue()
         
         with self.lock:
-            self.subscribers[subscriber_id] = q
+            self.subscribers[subscriber_id] = (q, filter_team)
         
-        print(f"[BROKER] Novo subscriber: {subscriber_id}")
+        print(f"[BROKER] Novo subscriber: {subscriber_id}" + (f" (filtrando: {filter_team})" if filter_team else " (todos os jogos)"))
         print(f"[BROKER] Total subscribers: {len(self.subscribers)}")
 
         try:
