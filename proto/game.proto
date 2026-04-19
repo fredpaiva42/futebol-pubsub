@@ -13,10 +13,16 @@ message UpdateRequest {
     int32 home_score = 3;
     int32 away_score = 4;
     string match_time = 5;
-    int32 yellow_cards = 6;
-    int32 red_cards = 7;
-    int32 corners = 8;
-    int32 shots_on_goal = 9;
+    int32 home_yellow_cards = 6;
+    int32 away_yellow_cards = 7;
+    int32 home_red_cards = 8;
+    int32 away_red_cards = 9;
+    int32 home_corners = 10;
+    int32 away_corners = 11;
+    int32 home_shots_on_goal = 12;
+    int32 away_shots_on_goal = 13;
+    int32 home_shots_off_goal = 14;
+    int32 away_shots_off_goal = 15;
 }
 
 message UpdateResponse {
@@ -35,8 +41,14 @@ message GameUpdate {
     int32 home_score = 4;
     int32 away_score = 5;
     string match_time = 6;
-    int32 yellow_cards = 7;
-    int32 red_cards = 8;
-    int32 corners = 9;
-    int32 shots_on_goal = 10;
+    int32 home_yellow_cards = 7;
+    int32 away_yellow_cards = 8;
+    int32 home_red_cards = 9;
+    int32 away_red_cards = 10;
+    int32 home_corners = 11;
+    int32 away_corners = 12;
+    int32 home_shots_on_goal = 13;
+    int32 away_shots_on_goal = 14;
+    int32 home_shots_off_goal = 15;
+    int32 away_shots_off_goal = 16;
 }
