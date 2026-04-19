@@ -52,6 +52,6 @@ Execute múltiplos subscribers e depois o publisher. Todos os subscribers recebe
 
 - [X] Implementar Broker (src/broker/server.py)
 - [X] Implementar Publisher (src/publisher/publisher.py)
-- [ ] Implementar Subscriber (src/subscriber/client.py)
+- [X] Implementar Subscriber (src/subscriber/client.py)
 - [ ] Adicionar filtros. Usar o campo `subscriber_id` para filtrar e enviar apenas os jogos que aquele cliente específico quer seguir.
 - [ ] Testar integração
