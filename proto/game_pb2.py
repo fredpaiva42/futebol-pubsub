@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10proto/game.proto\x12\x07\x66utebol\"\xc2\x01\n\rUpdateRequest\x12\x11\n\thome_team\x18\x01 \x01(\t\x12\x11\n\taway_team\x18\x02 \x01(\t\x12\x12\n\nhome_score\x18\x03 \x01(\x05\x12\x12\n\naway_score\x18\x04 \x01(\x05\x12\x12\n\nmatch_time\x18\x05 \x01(\t\x12\x14\n\x0cyellow_cards\x18\x06 \x01(\x05\x12\x11\n\tred_cards\x18\x07 \x01(\x05\x12\x0f\n\x07\x63orners\x18\x08 \x01(\x05\x12\x15\n\rshots_on_goal\x18\t \x01(\x05\"2\n\x0eUpdateResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\")\n\x10SubscribeRequest\x12\x15\n\rsubscriber_id\x18\x01 \x01(\t\"\xd2\x01\n\nGameUpdate\x12\x11\n\ttimestamp\x18\x01 \x01(\t\x12\x11\n\thome_team\x18\x02 \x01(\t\x12\x11\n\taway_team\x18\x03 \x01(\t\x12\x12\n\nhome_score\x18\x04 \x01(\x05\x12\x12\n\naway_score\x18\x05 \x01(\x05\x12\x12\n\nmatch_time\x18\x06 \x01(\t\x12\x14\n\x0cyellow_cards\x18\x07 \x01(\x05\x12\x11\n\tred_cards\x18\x08 \x01(\x05\x12\x0f\n\x07\x63orners\x18\t \x01(\x05\x12\x15\n\rshots_on_goal\x18\n \x01(\x05\x32\x8e\x01\n\x0bGameService\x12@\n\rPublishUpdate\x12\x16.futebol.UpdateRequest\x1a\x17.futebol.UpdateResponse\x12=\n\tSubscribe\x12\x19.futebol.SubscribeRequest\x1a\x13.futebol.GameUpdate0\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10proto/game.proto\x12\x07\x66utebol\"\xf5\x02\n\rUpdateRequest\x12\x11\n\thome_team\x18\x01 \x01(\t\x12\x11\n\taway_team\x18\x02 \x01(\t\x12\x12\n\nhome_score\x18\x03 \x01(\x05\x12\x12\n\naway_score\x18\x04 \x01(\x05\x12\x12\n\nmatch_time\x18\x05 \x01(\t\x12\x19\n\x11home_yellow_cards\x18\x06 \x01(\x05\x12\x19\n\x11\x61way_yellow_cards\x18\x07 \x01(\x05\x12\x16\n\x0ehome_red_cards\x18\x08 \x01(\x05\x12\x16\n\x0e\x61way_red_cards\x18\t \x01(\x05\x12\x14\n\x0chome_corners\x18\n \x01(\x05\x12\x14\n\x0c\x61way_corners\x18\x0b \x01(\x05\x12\x1a\n\x12home_shots_on_goal\x18\x0c \x01(\x05\x12\x1a\n\x12\x61way_shots_on_goal\x18\r \x01(\x05\x12\x1b\n\x13home_shots_off_goal\x18\x0e \x01(\x05\x12\x1b\n\x13\x61way_shots_off_goal\x18\x0f \x01(\x05\"2\n\x0eUpdateResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\")\n\x10SubscribeRequest\x12\x15\n\rsubscriber_id\x18\x01 \x01(\t\"\x85\x03\n\nGameUpdate\x12\x11\n\ttimestamp\x18\x01 \x01(\t\x12\x11\n\thome_team\x18\x02 \x01(\t\x12\x11\n\taway_team\x18\x03 \x01(\t\x12\x12\n\nhome_score\x18\x04 \x01(\x05\x12\x12\n\naway_score\x18\x05 \x01(\x05\x12\x12\n\nmatch_time\x18\x06 \x01(\t\x12\x19\n\x11home_yellow_cards\x18\x07 \x01(\x05\x12\x19\n\x11\x61way_yellow_cards\x18\x08 \x01(\x05\x12\x16\n\x0ehome_red_cards\x18\t \x01(\x05\x12\x16\n\x0e\x61way_red_cards\x18\n \x01(\x05\x12\x14\n\x0chome_corners\x18\x0b \x01(\x05\x12\x14\n\x0c\x61way_corners\x18\x0c \x01(\x05\x12\x1a\n\x12home_shots_on_goal\x18\r \x01(\x05\x12\x1a\n\x12\x61way_shots_on_goal\x18\x0e \x01(\x05\x12\x1b\n\x13home_shots_off_goal\x18\x0f \x01(\x05\x12\x1b\n\x13\x61way_shots_off_goal\x18\x10 \x01(\x05\x32\x8e\x01\n\x0bGameService\x12@\n\rPublishUpdate\x12\x16.futebol.UpdateRequest\x1a\x17.futebol.UpdateResponse\x12=\n\tSubscribe\x12\x19.futebol.SubscribeRequest\x1a\x13.futebol.GameUpdate0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,13 +32,13 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.game_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_UPDATEREQUEST']._serialized_start=30
-  _globals['_UPDATEREQUEST']._serialized_end=224
-  _globals['_UPDATERESPONSE']._serialized_start=226
-  _globals['_UPDATERESPONSE']._serialized_end=276
-  _globals['_SUBSCRIBEREQUEST']._serialized_start=278
-  _globals['_SUBSCRIBEREQUEST']._serialized_end=319
-  _globals['_GAMEUPDATE']._serialized_start=322
-  _globals['_GAMEUPDATE']._serialized_end=532
-  _globals['_GAMESERVICE']._serialized_start=535
-  _globals['_GAMESERVICE']._serialized_end=677
+  _globals['_UPDATEREQUEST']._serialized_end=403
+  _globals['_UPDATERESPONSE']._serialized_start=405
+  _globals['_UPDATERESPONSE']._serialized_end=455
+  _globals['_SUBSCRIBEREQUEST']._serialized_start=457
+  _globals['_SUBSCRIBEREQUEST']._serialized_end=498
+  _globals['_GAMEUPDATE']._serialized_start=501
+  _globals['_GAMEUPDATE']._serialized_end=890
+  _globals['_GAMESERVICE']._serialized_start=893
+  _globals['_GAMESERVICE']._serialized_end=1035
 # @@protoc_insertion_point(module_scope)

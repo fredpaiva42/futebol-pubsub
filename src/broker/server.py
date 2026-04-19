@@ -24,10 +24,16 @@ class GameServiceImpl(game_pb2_grpc.GameServiceServicer):
             home_score=request.home_score,
             away_score=request.away_score,
             match_time=request.match_time,
-            yellow_cards=request.yellow_cards,
-            red_cards=request.red_cards,
-            corners=request.corners,
-            shots_on_goal=request.shots_on_goal,
+            home_yellow_cards=request.home_yellow_cards,
+            away_yellow_cards=request.away_yellow_cards,
+            home_red_cards=request.home_red_cards,
+            away_red_cards=request.away_red_cards,
+            home_corners=request.home_corners,
+            away_corners=request.away_corners,
+            home_shots_on_goal=request.home_shots_on_goal,
+            away_shots_on_goal=request.away_shots_on_goal,
+            home_shots_off_goal=request.home_shots_off_goal,
+            away_shots_off_goal=request.away_shots_off_goal,
         )
 
         with self.lock:

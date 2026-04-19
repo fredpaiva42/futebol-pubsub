@@ -15,18 +15,23 @@ def run():
 
     try:
         for update in stub.Subscribe(request):
-            print(f"[SUBSCRIBER {subscriber_id}] Nova atualização")
-            print(f" Timestamp: {update.timestamp}")
+            print(f"\n[SUBSCRIBER {subscriber_id}] NOVA ATUALIZAÇÃO")
+            print(f"  Timestamp: {update.timestamp}")
             print(
-                f" {update.home_team} {update.home_score}x{update.away_score} {update.away_team}"
+                f"  {update.home_team} {update.home_score}x{update.away_score} {update.away_team}"
             )
-            print(f" Tempo: {update.match_time}")
-            print(
-                f" Cartões: {update.yellow_cards} amarelos, {update.red_cards} vermelhos"
-            )
-            print(f" Escanteios: {update.corners}")
-            print(f" Finalizações: {update.shots_on_goal} no alvo")
-
+            print(f"  Tempo: {update.match_time}")
+            print("")
+            print("  Cartões amarelos")
+            print(f"  {update.home_yellow_cards} x {update.away_yellow_cards}")
+            print("  Cartões vermelhos")
+            print(f"  {update.home_red_cards} x {update.away_red_cards}")
+            print("  Escanteios")
+            print(f"  {update.home_corners} x {update.away_corners}")
+            print("  Finalizações no gol")
+            print(f"  {update.home_shots_on_goal} x {update.away_shots_on_goal}")
+            print("  Finalizações para fora")
+            print(f"  {update.home_shots_off_goal} x {update.away_shots_off_goal}")
     except grpc.RpcError as e:
         print(f"[SUBSCRIBER {subscriber_id}] Erro: {e.details()}")
 
