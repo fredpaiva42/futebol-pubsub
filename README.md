@@ -29,18 +29,24 @@ uv sync
 ### 1. Iniciar o Broker
 
 ```bash
+source .venv/bin/activate
+
 python -m src.broker.server
 ```
 
 ### 2. Iniciar Subscribers (múltiplos terminais)
 
 ```bash
+source .venv/bin/activate
+
 python -m src.subscriber.client
 ```
 
 ### 3. Publicar Atualização
 
 ```bash
+source .venv/bin/activate
+
 python -m src.publisher.client
 ```
 
