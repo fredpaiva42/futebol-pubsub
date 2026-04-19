@@ -9,9 +9,13 @@ def run():
     stub = game_pb2_grpc.GameServiceStub(channel)
 
     subscriber_id = str(uuid.uuid4())[:8]
-    print(f"[SUBSCRIBER {subscriber_id}] Subscribing to game updates...")
+    filter_team = input("Time para filtrar (deixe vazio para todos): ").strip()
 
-    request = game_pb2.SubscribeRequest(subscriber_id=subscriber_id)
+    print(f"[SUBSCRIBER {subscriber_id}] Conectando ao Broker...")
+
+    request = game_pb2.SubscribeRequest(
+        subscriber_id=subscriber_id, filter_team=filter_team if filter_team else None
+    )
 
     try:
         for update in stub.Subscribe(request):
